@@ -5,7 +5,7 @@
 <header>The little things</header>
 <hr>
 <ul>
-<li><a href ='blog/blog-index'> Blog Library </a></li>
+<li><a href ='blog-index'> Blog Library </a></li>
 <li><a href ='http://frankiebee.github.io/'> Main</a></li>
 <li><a href ='#'> More About Me</a></li>
 <li><a href ='#'> Projects Archive</a></li>
@@ -13,5 +13,9 @@
 </ul>
 <hr>
 <h1>Archive</h1>
-<a href = 'http://frankiebee.github.io/blog/git.html'
+<ul>
+  <li><a href = 'http://frankiebee.github.io/blog/git.html'> Thoughts and reflections on GitHub</a></li>
+</ul>
+<hr>
+<footer>Frankie Pangilinan,<a href = "https://www.facebook.com/frankie.pangilinan.9">facebook</a> ,frankie.diamond@gmail.com, San Francisco CA</footer>
 </html>
