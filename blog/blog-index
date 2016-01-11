@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<title>Tile goes here.</title>
+<body>
+<header>The little things</header>
+<hr>
+<ul>
+<li><a href ='blog/blog-index'> Blog Library </a></li>
+<li><a href ='#'> Main</a></li>
+<li><a href ='#'> More About Me</a></li>
+<li><a href ='#'> Projects Archive</a></li>
+<li><a href ='#'> Contact info</a></li>
+</ul>
+
+</html>
