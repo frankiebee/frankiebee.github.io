@@ -1,0 +1,65 @@
+html{
+  font-family: "OpenDyslexicAlta-Regular";
+  background-color: #00ccff;
+  color: #00ccff;
+  -webkit-text-stroke: 0.05em black;
+}
+a {
+  text-decoration: blink;
+  color: #ffcc00;
+  -webkit-text-stroke: 0.02em #000000;
+  font-size: 1.25em;
+}
+header{
+  text-align: center;
+  font-size: 3em;
+}
+nav{
+  align-items: center;
+  border-top: solid;
+}
+body{
+  background: #ffffff;
+  margin-top: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 0;
+  position: fixed;
+}
+article{
+  color:#00ccff;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+}
+p{
+  text-align: center;
+}
+
+
+table{
+  align-items: center;
+  width: 100%;
+  table-layout: initial;
+  padding-left: 5%;
+}
+tbody{
+  border-bottom-width: 0.5em;
+  width: 15%;
+}
+ul{
+  text-align: center;
+  list-style-type: none;
+}
+footer{
+  border-top: solid;
+  font-size: 0.75em;
+}
+
+
+.box{
+  border: solid;
+  border-width: 2px;
+  border-style: solid;
+
+}
