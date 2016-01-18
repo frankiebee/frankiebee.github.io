@@ -9,6 +9,10 @@ a {
   color: #ffcc00;
   -webkit-text-stroke: 0.02em #000000;
   font-size: 1.25em;
+
+}
+a:active{
+  color: #00ccff;
 }
 header{
   text-align: center;
@@ -24,6 +28,8 @@ body{
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 0;
+  border-right-style: inset;
+  border-left-style: outset;
 }
 article{
   color:#00ccff;
