@@ -1,0 +1,11 @@
+body{
+  height: 75vw;
+
+}
+.left{
+text-align: left;
+}
+footer{
+position: relative;
+top: 31em;
+}

@@ -5,7 +5,7 @@ html{
   -webkit-text-stroke: 0.05em black;
 }
 a {
-  text-decoration: blink;
+  text-decoration: blink ;
   color: #ffcc00;
   -webkit-text-stroke: 0.02em #000000;
   font-size: 1.25em;
@@ -53,6 +53,7 @@ ul{
 footer{
   border-top: solid;
   font-size: 0.75em;
+  padding-bottom: 1em;
 }
 
 
