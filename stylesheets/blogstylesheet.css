@@ -5,6 +5,13 @@ body{
 .left{
 text-align: left;
 }
+main{
+  background: #ffffff
+}
+p{
+  margin-right: 3px;
+  margin-left: 3px;
+}
 footer{
 position: relative;
 top: 31em;
