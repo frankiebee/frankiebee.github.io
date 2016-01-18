@@ -1,5 +1,5 @@
 body{
-  min-height: 75vw;
+  min-height: 54vw;
   display: block;
 }
 
@@ -14,8 +14,8 @@ p{
   margin-right: 3px;
   margin-left: 3px;
 }
-footer{
-position: relative;
-top: 31em;
-display: block;
+
+.overwrite {
+  position: static;
+  top: 8vw;
 }
