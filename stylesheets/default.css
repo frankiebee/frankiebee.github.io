@@ -30,6 +30,7 @@ body{
   margin-bottom: 0;
   border-right-style: inset;
   border-left-style: outset;
+  min-height: 54vw;
 }
 article{
   color:#00ccff;
@@ -69,4 +70,9 @@ footer{
   border-width: 2px;
   border-style: solid;
 
+}
+.overwrite {
+
+  position: relative;
+  top: 27vw;
 }
