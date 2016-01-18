@@ -49,6 +49,7 @@ tbody{
 ul{
   text-align: center;
   list-style-type: none;
+  margin-bottom: 0px;
 }
 footer{
   border-top: solid;

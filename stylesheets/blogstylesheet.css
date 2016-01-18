@@ -1,12 +1,14 @@
 body{
-  height: 75vw;
-
+  min-height: 75vw;
+  display: block;
 }
+
 .left{
 text-align: left;
 }
-main{
-  background: #ffffff
+
+
+
 }
 p{
   margin-right: 3px;
@@ -15,4 +17,8 @@ p{
 footer{
 position: relative;
 top: 31em;
+display: block;
+}
+.overwrite {
+  position: static;
 }
