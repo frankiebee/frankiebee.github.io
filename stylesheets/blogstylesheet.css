@@ -19,7 +19,3 @@ position: relative;
 top: 31em;
 display: block;
 }
-.overwrite {
-  position: static;
-  top: 8vw;
-}
