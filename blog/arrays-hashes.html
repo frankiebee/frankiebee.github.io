@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blogstylesheet.css">
+  <title>Blog it up...</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <header>The little things</header>
+  <nav>
+    <ul>
+      <table>
+        <tr>
+          <td><li><a href ='http://frankiebee.github.io/'> Main</a></li></td>
+          <td><li><a href ='http://frankiebee.github.io/other/about_me.html'> More About Me</a></li></td>
+          <td><li><a href ='http://frankiebee.github.io//other/projects.html'> Projects Archive</a></li></td>
+          <td><li><a href ='http://frankiebee.github.io/blog/blog-index.html'> Blog Library </a></li></td>
+          <td><li><a href ='http://frankiebee.github.io//other/contact.html'> Contact info</a></li></td>
+        </tr>
+      </table>
+    </ul>
+  </nav>
+  <article class = "left">
+    <h1>Arrays and Hashes in Ruby</h1>
+    <h2>Know your data structures</h2>
+    <h3>January 24, 2016</h4>
+
+    <section >
+      <p class = "left">
+        <span>The basic understanding:</span> Before jumping into details lets start with 0 and nothing. 0 is a good place to start. 0 is still a number it is not like nothing, nothing is just that... nothing. When your born (Unless under east Asian age reckoning) You're not 1 or nothing you are age 0. This bit of information is important later. Now, lets talk about nothing. Nil is Ruby's way of saying nothing. Nothing or nil is indeed not to sugar coat it; nothing. Nil is neither true nor false it just is not a thing.
+      </p>
+      <p class = "left">
+        <span>Moving on to arrays:</span> A array is a data structure that stores objects in an integer-index. Lets make an array! There are many ways to establish a new array
+        <ul>
+          <li>One of the ways you can create an array is using literal notations, such as: </li>
+            <pre><code>
+  arr = [] # This is an empty array that puts nil
+  arr = [1,2.42,3] # This array contains integers and floats
+  arr = ["Arrays","are","cool","!"] # Here is an array of strings
+  arr = [[1,2,3],[1,2,3],[1,2,3]] # And this is an array of arrays.
+            </code></pre>
+          <li>You can also achieve the creation of an array through constructor notation (Array.new) this notation comes with arguments for initial size and default object: </li>
+            <pre><code>
+  arr = Array.new # Creates => []
+  arr = Array.new(2) # Creates => [nil, nil]
+  arr = Array.new(2, "pop") # Creates => ["pop", "pop", "pop"]
+  arr = Array.new(2){Array.new(1, true)} # Creates => [[true][true][true]]
+  arr = Array.new(4){Hash.new} # Creates => [{}, {}, {}, {}]
+            </code></pre>
+          <li></li>
+        </ul>
+        Each object or element in an array has an address like number known as an index. When you want to recall or access an element or object in an array, you would do so with the [] and the index number. Remember earlier when we talked about how when you are born you are 0, well the first object in an array is at the 0th index. if for example we had an array of <code>x = [42,7,98,18,2]</code> 42 would be at [0] and 2 would be at [4]. Even though their are five objects in the array it still starts from 0 making the fourth objects index [3]. To get a range you could do x[0..2] and that would give you [42,7,98] where x[0...2] would give you [42,7]. This can also be achieved with a slice x[1,4], this would give you [7,98,18,2].
+      </p>
+      <p class = "left">
+        <span>What about Hashes:</span> Hashes, like arrays are a form of storing data. The difference is that a hash is a collection of key-value pairs and the keys create the index referencing the objects. Hashes like arrays have both literal and constructor notations for creating them. There are also a couple different ways to create a hash key value pair and what those can be but as well but just going to focus on a small bit for this blog entry.
+        <ul>
+          <li>Creating a Hash</li>
+          <pre><code>
+literal_hash = {} # this is an empty hash
+hash = Hash.new(0) #this sets the default value of the keys to 0
+hash["a"] = 45      # This is one way to create key pairs
+hash[42] = "life"   # {42 => "life"}
+hash["b"]           # =>0 Creating a key
+hash["c"]           # => 0
+     #hash is {a => 45, 42 => life, b => 0, c => 0}
+
+# This is another way to create a hash and set the keys and values.
+colors = {"red" => [255,0,0], "green" => [0,255,0], "blue" => [0,0,255]}
+          </code></pre>
+        </ul>
+        And like arrays you access values with [] like so <code>colors["red"]</code>. When iterating over hashes the order that the keys are added is the order that they are iterated over. Also slicing does not work with hashes.
+        Thats all for today see you next time!
+
+      </p>
+    </section>
+  </article>
+
+  <footer class = 'overwrite'>
+    <ul>
+      <li>Frankie Pangilinan</li>
+      <li><a href = "https://www.facebook.com/frankie.pangilinan.9">facebook</a> </li>
+      <li>frankie.diamond@gmail.com, </li>
+      <li>San Francisco CA</li>
+    </ul>
+  </footer>
+</body>
+</html>
