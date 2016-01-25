@@ -76,3 +76,13 @@ footer{
   position: relative;
   top: 27vw;
 }
+
+.f-alighn{
+
+  font-size: x-small;
+  height: 1em;
+  width: inherit;
+  padding-left: 0;
+  padding-right: 0;
+
+}
