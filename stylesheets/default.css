@@ -1,8 +1,9 @@
 html{
-  font-family: "OpenDyslexicAlta-Regular";
-  background-color: #00ccff;
-  color: #00ccff;
-  -webkit-text-stroke: 0.05em black;
+  background-image: url("../img/stars.jpg");
+  background-size: cover;
+  color:rgba(200,200,200,200);
+  -webkit-text-stroke: 0.05em #000000;
+  font-family: "NordRegular";
 }
 a {
   text-decoration: blink ;
@@ -15,6 +16,8 @@ a:active{
   color: #00ccff;
 }
 header{
+  font-family: "NordRegular";
+  opacity: 2;
   text-align: center;
   font-size: 3em;
 }
@@ -24,6 +27,8 @@ nav{
 }
 body{
   background: #ffffe5;
+  opacity: 0.54;
+
   margin-top: 0;
   margin-left: 17%;
   margin-right: 17%;
@@ -39,7 +44,10 @@ article{
   text-align: center;
 }
 p{
+  opacity: 2;
+  font-weight: 1em;
   text-align: center;
+  font-family: "NordLight";
 }
 
 
@@ -85,4 +93,12 @@ footer{
   padding-left: 0;
   padding-right: 0;
 
+}
+@font-face{
+  font-family: "NordRegular";
+  src: url("nordregular.ttf");
+}
+@font-face{
+  font-family: "NordLight";
+  src: url("nordlight.ttf")
 }
