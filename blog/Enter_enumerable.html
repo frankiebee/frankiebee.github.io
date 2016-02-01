@@ -63,7 +63,8 @@
         But lets also look what happens when we use .each on a hash.
         <pre>
           <code>
-  irb(main)> h = {:firstname => "Frankie",:middlename => "De'Oror", :lastname => "Pangilinan"}
+  irb(main)> h = {:firstname => "Frankie",:middlename => "De'Oror",
+  :lastname => "Pangilinan"}
 
   irb(main)> h.each {|key, value| puts "#{value}"}
   Frankie
