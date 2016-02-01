@@ -7,7 +7,7 @@
   src: url("NordLight.woff")
 }
 html{
-  background-image: url("../img/stars.jpg");
+ /* background-image: url("../img/stars.jpg");*/
   background-size: cover;
   color:rgba(200,200,200,200);
   -webkit-text-stroke: 0.05em #000000;
@@ -36,20 +36,18 @@ nav{
 body{
   background: #ffffe5;
   opacity: 0.54;
-
+  height: 100vh;
   margin-top: 0;
   margin-left: 17%;
   margin-right: 17%;
   margin-bottom: 0;
-  border-right-style: inset;
-  border-left-style: outset;
-  min-height: 54vw;
 }
 article{
-  color:#00ccff;
+  background: #ffffe5;
   margin-left: 10%;
   margin-right: 10%;
   text-align: center;
+  font-size: 2em;
 }
 p{
   opacity: 2;
@@ -101,4 +99,8 @@ footer{
   padding-left: 0;
   padding-right: 0;
 
+}
+.subtext{
+  font-size: 1.5em;
+  width: 25%;
 }
