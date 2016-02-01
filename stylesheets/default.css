@@ -1,10 +1,10 @@
 @font-face{
   font-family: "NordRegular";
-  src: url("nordregular.ttf");
+  src: url("nordregular.woff");
 }
 @font-face{
   font-family: "NordLight";
-  src: url("nordlight.ttf") format('tff')
+  src: url("nordlight.woff")
 }
 html{
   background-image: url("../img/stars.jpg");
