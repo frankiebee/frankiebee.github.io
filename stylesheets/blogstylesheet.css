@@ -40,3 +40,7 @@ span {
 code{
   opacity: 3;
 }
+.empty-box{
+  min-height: 55vh;
+
+}
