@@ -57,16 +57,16 @@
         <ul>
           <li>Creating a Hash</li>
           <pre><code>
-literal_hash = {} # this is an empty hash
-hash = Hash.new(0) #this sets the default value of the keys to 0
-hash["a"] = 45      # This is one way to create key pairs
-hash[42] = "life"   # {42 => "life"}
-hash["b"]           # =>0 Creating a key
-hash["c"]           # => 0
-     #hash is {a => 45, 42 => life, b => 0, c => 0}
+  literal_hash = {} # this is an empty hash
+  hash = Hash.new(0) #this sets the default value of the keys to 0
+  hash["a"] = 45      # This is one way to create key pairs
+  hash[42] = "life"   # {42 => "life"}
+  hash["b"]           # =>0 Creating a key
+  hash["c"]           # => 0
+       #hash is {a => 45, 42 => life, b => 0, c => 0}
 
-# This is another way to create a hash and set the keys and values.
-colors = {"red" => [255,0,0], "green" => [0,255,0], "blue" => [0,0,255]}
+  # This is another way to create a hash and set the keys and values.
+  colors = {"red" => [255,0,0], "green" => [0,255,0], "blue" => [0,0,255]}
           </code></pre>
         </ul>
         And like arrays you access values with [] like so <code>colors["red"]</code>. When iterating over hashes the order that the keys are added is the order that they are iterated over. Also slicing does not work with hashes.

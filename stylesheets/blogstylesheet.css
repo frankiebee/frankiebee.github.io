@@ -25,9 +25,10 @@ footer{
 }
 
 pre {
+
   width:76%;
   margin-left: 15%;
-  font-size: 1em;
+  font-size: 0.45em;
   -webkit-text-stroke: #66ff33;
   text-align: left;
   background: #262626;
@@ -35,4 +36,7 @@ pre {
 }
 span {
   color: #ff66ff;
+}
+code{
+  opacity: 3;
 }
