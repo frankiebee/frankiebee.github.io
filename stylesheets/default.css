@@ -23,11 +23,15 @@ a {
 a:active{
   color: #00ccff;
 }
+a:hover{
+  color: #66ccff;
+}
 header{
   font-family: "NordRegular";
   opacity: 2;
   text-align: center;
   font-size: 3em;
+  padding-top: 5vh;
 }
 nav{
   align-items: center;
@@ -76,6 +80,10 @@ footer{
   border-top: solid;
   font-size: 0.75em;
   padding-bottom: 1em;
+}
+footer a img:hover {
+ -webkit-filter: invert(.8);
+  filter: invert(.8);
 }
 
 
