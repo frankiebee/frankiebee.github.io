@@ -5,6 +5,7 @@ body{
 
 .left{
 text-align: left;
+padding-bottom: 5vh;
 }
 
 
@@ -43,4 +44,8 @@ code{
 .empty-box{
   min-height: 55vh;
 
+}
+.title{
+  font-size: 1.5em;
+  font-family: "NordRegular"
 }
