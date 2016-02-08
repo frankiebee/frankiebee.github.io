@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blogstylesheet.css">
+  <title>Blog it up...</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <header>The little things</header>
+  <nav>
+    <ul>
+      <table>
+        <tr>
+          <td><li><a href ='http://frankiebee.github.io/'> Main</a></li></td>
+          <td><li><a href ='http://frankiebee.github.io/other/about_me.html'> More About Me</a></li></td>
+          <td><li><a href ='http://frankiebee.github.io//other/projects.html'> Projects Archive</a></li></td>
+          <td><li><a href ='http://frankiebee.github.io/blog/blog-index.html'> Blog Library </a></li></td>
+        </tr>
+      </table>
+    </ul>
+  </nav>
+  <article class = "left">
+    <h1>Welcome to the high society</h1>
+    <h2>Ruby Scene 2: CLASS </h2>
+    <h3>Febuary 7, 2016</h4>
+
+      <section class = "left">
+        <p>
+          <span>So, Lets talk about objects.</span> Objects are everything! A string like "Hello" is a string object. The number 9 is a Fixnum object. And an array of [1, 2, 42] well its an Array object. If this does not seam straight forward, its okay i got you. Lets think of it in another term. A ball, a lemon and pants are all objects. So everything is an object!
+        </p>
+        <p>
+          So normally the way i have seen classes taught(experienced both in ruby and python), is that now that we have gone over that every thing is an object we would talk about inheritance. We would also go over a lengthy example of what this means. This in the long run can get kind of confusing and i like things to be short and sweet. So I'm going to ask you now to think of this: Naturally all classes inherit from the class Object. So lets look at this from a different perspective and lets add one more element to are understanding. The class Salmon inherits from the class Fish. The class Tuna inherits from the class fish. Charley is an <i>instance</i> of Tuna and their for Charley is an instance of the class Tuna. Tuna is a decedent of the class Fish and inherits the traits of fish. Jody is an instance of the class Salmon which inherits from the class fish. Jody look delicious...
+          Type the code below in a script and run it in your terminal
+          <pre>
+            <code>
+  class Fish
+
+  end
+  class Salmon < Fish
+
+  end
+  class Tuna < Fish
+
+  end
+
+  p Tuna.ancestors
+  p Salmon.ancestors
+            </code>
+          </pre>
+        #ancestors should return an array and that should be something like: <code>[Salmon, Fish, Object, Kernel, BasicObject]</code> The important part to focus on here is the Salmon, Fish, Object, will ignore the last two for now.
+        </p>
+        <p>
+          Now we have some class's lets do a little more. Add the new code to your file and take out the p Tuna.ancestors and p Salmon.ancestors.
+          <pre>
+            <code>
+  class Fish
+    def eat
+      "Yum so good!"
+    end
+  end
+
+  class Salmon < Fish
+
+  end
+
+  class Tuna < Fish
+    def eat
+      "Tuna is the red meat of fish. It's so tasty!"
+    end
+  end
+
+  charley = Tuna.new
+  jody = Salmon.new
+
+  jody.eat
+  charley.eat
+
+            </code>
+          </pre>
+       <span>See what we did there?</span> We made a method called eat (methods are like the actions of objects) in Fish. We inherited that method from Fish in Salmon and changed the method #eat for Tuna's. Cool new stuffs with practical real world application! Lets get more complicated! New class new code...
+        </p>
+        <p>
+          <pre><code>
+  class Ball
+    def initialize(bounce)
+      @bounce = bounce
+    end
+    def bounce
+      @bounce
+    end
+    def bouncing
+      @bounce.times do |i|
+        puts "BOUNCE"
+      end
+    end
+  end
+  ball = Ball.new(5)
+  puts ball.bounce
+  ball.bouncing
+          </code></pre>
+          <span>What did we do here:</span>
+          <ul>
+            <li>We made a class called Ball.</li>
+            <li>We gave it a instance variable called bounce  </li>
+            (we know its an instance variable because of the '@' sign this makes it possible to access this variable through out the class definition)
+            <li>we made it possible to read what bounce is by defining it as a method </li>
+            <li>Then we made a method that "bounces" the ball</li>
+          </ul>
+          Now what if you wanted to change the number of bounce. Well at the moment you would have to declare a new Ball object with the desired number of bounces. or in the code we have you could add this...
+          <pre><code>
+  class Ball
+    def initialize(bounce)
+      @bounce = bounce
+    end
+    def bounce
+      @bounce
+    end
+    def bounce=(bounce)
+      @bounce = bounce
+    end
+    def bouncing
+      @bounce.times do |i|
+        puts "BOUNCE"
+      end
+    end
+  end
+  ball = Ball.new(5)
+  puts ball.bounce
+  ball.bouncing
+  ball.bounce = 10
+          </code></pre>
+          We just added whats called a writer method with the bounce=(bounce). Now you can reassign bounce. But imagine now you had a bunch of instance varible writing the reader and writer methods can take up a lot of time and space in your script. Well lucky for us Ruby provides us a short cut for these methods madness. Rewrite your ball clas like so:
+          <pre><code>
+  class Ball
+    attr_reader = :bounce
+    attr_writer = :bounce
+    def initialize(bounce)
+      @bounce = bounce
+    end
+    def bouncing
+      @bounce.times do |i|
+        puts "BOUNCE"
+      end
+    end
+  end
+  ball = Ball.new(5)
+  puts ball.bounce
+  ball.bouncing
+  ball.bounce = 10
+          </code></pre>
+          Thats sweet right? With two line we got rid of six lines of code the attr_reader replaces def bounce and attr_writer replaces def bounce=(bounce)
+          but lets take it one step further!
+          <pre><code>
+  class Ball
+    attr_accessor :bounce
+
+    def initialize(bounce)
+      @bounce = bounce
+    end
+    def bouncing
+      @bounce.times do |i|
+        puts "BOUNCE"
+      end
+    end
+  end
+  ball = Ball.new(5)
+  puts ball.bounce
+  ball.bouncing
+  ball.bounce = 10
+        </code></pre>
+        attr_accessor is both reader and writer great right!? Why not just always use attr_accessor? Well sometimes you don't want your instance variables to be writable and some times you don't want them to be readable. And that is all i have time for today folks! See you next time where we will talk more about classes but not till after are JavaScript intermission.
+        </p>
+      </section>
+    </article>
+
+  <footer>
+
+    <ul>
+      <table>
+
+        <tr>
+          <li class = "f-alighn"><td class = "subtext"> Find me on:</td></li>
+          <li class = "f-alighn"><td><a = href = "https://github.com/frankiebee"> <img src="../img/github-mark.png"></a></td></li>
+          <li class = "f-alighn"><td><a href = "https://www.facebook.com/frankie.pangilinan.9"><img src="../img/FB-f-Logo__blue_29.png"></a> </td></li>
+          <li><td class = "subtex">
+          <a href="https://www.linkedin.com/pub/frankie-pangilinan/10b/956/b30">
+            <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_profile_bluetxt_80x15.png" width="80" height="15" border="0" alt="View Frankie Pangilinan's profile on LinkedIn">
+          </a>
+          </td></li>
+          <li class = "f-alighn"><td class = "subtext">You can also send me an<a href = "mailto:frankie.diamond@gmail.com"> EMAIL</a> </td></li>
+        </tr>
+      </table>
+    </ul>
+  </footer>
+</body>
+</html>
