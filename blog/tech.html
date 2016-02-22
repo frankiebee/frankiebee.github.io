@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blogstylesheet.css">
+  <title>Blog it up...</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <header>The little things</header>
+  <nav>
+    <ul>
+      <table>
+        <tr>
+          <td><li><a href ='http://frankiebee.github.io/'> Main</a></li></td>
+          <td><li><a href ='http://frankiebee.github.io/other/about_me.html'> More About Me</a></li></td>
+          <td><li><a href ='http://frankiebee.github.io//other/projects.html'> Projects Archive</a></li></td>
+          <td><li><a href ='http://frankiebee.github.io/blog/blog-index.html'> Blog Library </a></li></td>
+        </tr>
+      </table>
+    </ul>
+  </nav>
+  <article>
+    <h1>6 Common Programing Paradigm's</h1>
+    <h2>With a PB and J sandwich </h2>
+    <h3>February 20, 2016</h4>
+
+      <section >
+          <p class = "left">Whats a programing paradigm you ask... Well in one sense of the meaning its a style/way of structuring a program. In another it is a way to classify a programing language given its features and execution.</p>
+          <table >
+              <ul>
+                <tr>
+                  <td><li>Imperative Programing
+                  <p class = "left">Is a programing paradigm that uses statements to change a programs state.</p></li></td>
+                  <td><li>Object-Orientated Programing <p class = "left">Is a programing paradigm based on the concept of objects. These objects contain data structures that contain data. The data is represented as an attribute of the object. Objects also contain code proceeder that can manipulate the data refereed to in most cases as a method.</p></li></td>
+                  <td><li>Functional Programing <p class = "left">Is a programing paradigm that calculates mathematical functions while avoiding the change of a program's state. </p></li></td>
+                </tr>
+                <tr>
+                  <td><li>Logic Programing <p class = "left">A programing paradigm based on formal logic. Typically written as sets of sentences containing proofs and clauses as well as subgoals.</p> </li></td>
+                  <td><li>Symbolic Programing <p class = "left">Allows for the manipulation of its own program giving it the effect and appearance of learning. This style is typically used for AI's and games.</p></li></td>
+                  <td><li>Procedural Programing <p class = "left">This is a breakaway of Imperative given the addition of creating and calling functions.</p></li></td>
+
+                </tr>
+              </ul>
+              </table>
+          <p class="left">To clear some stuff up before we move on: A computer stores data called variables. Some variables are subject to change and their fore refereed to as mutable while others are immutable and not be changed for a number of given reasons. The contents of the variables at any given time represent the state. </p>
+          <h4>Peanut Butter Jelly Time!</h4>
+          <p class="left">When I tell you to make a "PB&J" you make a peanut butter jelly sandwich. When we tell a computer to make a pb&j we get this a hand full of error messages and and a couple headaches later we have an idea of of what a pb&j. Lets take a look at the many different paradigms of a PB&J. FYI you may have caught on to this if not thats okay I'm telling you now, some languages fall into many different paradigms. At that point it is up to the discretion of the writer as to which paradigms are in play. So here we go! Lets make a peanut butter jelly sandwich and maybe even score a glass of milk. Code examples:</p>
+      </section>
+      <p class="left">Starting simple and keeping it simple PB&J with Imperative (python):</p>
+        <pre><code class="py-codepad">
+   #Make the ingredients
+  bread_loaf = ["bread", "bread", "bread", "bread", "bread", "bread"]
+  pb = "Creamy smooth peanut butter just how i like it"
+  add = "with"
+  jam = "strawberry jam"
+  #assemble the sandwich
+  sandwich = [bread_loaf.pop(), add, jam, add, pb, bread_loaf.pop()]
+  for make, serve in enumerate(sandwich):
+      print serve # me a sandwich
+        </code></pre>
+  <p>Thats pretty simple right . You created variables changed the state of bread_loaf by taking two pieces from it changing the state of bread loaf.
+      </p>
+  <p class="left">Object-orientated with a little Procedural Programing (Ruby):</p>
+      <pre><code class="py-codepad">
+ #Make the idea of ingredients
+ class PbandJ
+    attr_accessor :sandwich, :amount, :jam, :peanut_butter, :loaf
+    def initialize(amount)
+      @amount = amount
+    end
+    def makeBread
+      @loaf = Array.new(10,"bread")
+    end
+    def makeSandwich
+      @sandwich = "#{@amount} Pb&J with #{@loaf.take(1)} and #{@jam} jelly and #{@peanut_butter} peanut butter with #{loaf.take(1)} on top!"
+    end
+  end
+  mine = PbandJ.new(1)
+  mine.makeBread()
+  mine.jam = "Grape"
+  mine.peanut_butter = "chunky"
+  puts mine.makeSandwich()
+      </code></pre>
+    </article>
+
+  <footer>
+
+    <ul>
+      <table>
+
+        <tr>
+          <li class = "f-alighn"><td class = "subtext"> Find me on:</td></li>
+          <li class = "f-alighn"><td><a = href = "https://github.com/frankiebee"> <img src="../img/github-mark.png"></a></td></li>
+          <li class = "f-alighn"><td><a href = "https://www.facebook.com/frankie.pangilinan.9"><img src="../img/FB-f-Logo__blue_29.png"></a> </td></li>
+          <li><td class = "subtex">
+          <a href="https://www.linkedin.com/pub/frankie-pangilinan/10b/956/b30">
+            <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_profile_bluetxt_80x15.png" width="80" height="15" border="0" alt="View Frankie Pangilinan's profile on LinkedIn">
+          </a>
+          </td></li>
+          <li class = "f-alighn"><td class = "subtext">You can also send me an<a href = "mailto:frankie.diamond@gmail.com"> EMAIL</a> </td></li>
+        </tr>
+      </table>
+    </ul>
+  </footer>
+</body>
+</html>
