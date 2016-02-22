@@ -118,3 +118,6 @@ footer a img:hover {
   font-size: 1.5em;
   width: 25%;
 }
+li{
+  list-style-type: none;
+}

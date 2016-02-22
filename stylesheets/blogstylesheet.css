@@ -5,9 +5,12 @@
 
 .left{
 text-align: left;
-padding-bottom: 5vh;
-}
 
+}
+.small-left{
+text-align: left;
+font-size: 0.6em;
+}
 
 
 }
@@ -51,7 +54,4 @@ code{
 }
 .pbjsmall-font {
   font-weight: 0.05em;
-}
-.py-codepad{
-  padding-left: 15px;
 }
