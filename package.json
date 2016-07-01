@@ -1,0 +1,15 @@
+{
+  "name": "fox_svg",
+  "version": "0.0.0",
+  "description": "meta mask fox logo svg",
+  "main": "fox_animation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "frankiebee",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^13.0.1",
+    "vivus": "^0.3.1"
+  }
+}
