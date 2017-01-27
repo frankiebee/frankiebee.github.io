@@ -1,0 +1,1 @@
+MetaMask talk for devcon2 in Shanghai 2016
