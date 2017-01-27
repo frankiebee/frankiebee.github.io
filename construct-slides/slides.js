@@ -202,7 +202,7 @@ function img(src) {
     src: src,
     style: {
       // maxWidth: '660px',
-      maxHeight: '80vh',
+      maxHeight: '75vh',
       background: 'whitesmoke',
     },
   })
