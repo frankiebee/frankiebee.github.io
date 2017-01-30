@@ -5599,7 +5599,6 @@ function root(){
       '~7k users', h('br'),
       '~35 million RPC requests / day', h('br'),
       '( thanks infura! )', h('br'),
-      '1 lil buterin name drop', h('br'),
     ]),
 
     // browser dapp compat table
