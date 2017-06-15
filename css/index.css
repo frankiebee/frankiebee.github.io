@@ -1,0 +1,17 @@
+@import url("fonts.css");
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tittle {
+  font-size: 2em;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
