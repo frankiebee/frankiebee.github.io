@@ -4,12 +4,15 @@
   "description": "my things",
   "main": "index.js",
   "scripts": {
-    "start": "beefy js/index.js:bundle.js --live --open --index=./index.html --cwd ./",
+    "start": "beefy index.js:bundle.js --live --open --index=./index.html --cwd ./"
   },
   "author": "frankiebee",
   "license": "ISC",
   "dependencies": {
     "browserify": "^13.0.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-hyperscript": "^3.0.0",
     "vivus": "^0.3.1"
   }
 }

@@ -1,0 +1,89 @@
+@import url("css/reset.css");
+
+html {
+  --main-off-white: rgb(253, 248, 242);
+  --peach-gray: #CDA683;
+}
+
+body {
+  background: var(--main-off-white);
+  width: 100vw;
+  height: 100vh;
+}
+
+.title {
+  font-size: 2em;
+}
+
+.sub-title {
+  font-size: 1.25em;
+}
+
+.sub-title-color {
+  font-size: 1.25em;
+  color: var(--peach-gray);
+}
+
+.peach-gray {
+    color: var(--peach-gray);
+}
+
+.tab {
+  padding-left: 0.75em;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+.italic {
+  font-style: italic;
+}
+.space-around {
+
+}
+
+.dict {
+  padding: 15px;
+  width: 70vw;
+  max-width: 842px;
+}
+
+.first::first-letter {
+  color: var(--peach-gray)
+}
+
+ .animated {
+  background-image: url(/css/images/logo.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  padding-top:95px;
+  margin-bottom:60px;
+  -webkit-animation-duration: 3s;animation-duration: 3s;
+  -webkit-animation-fill-mode: both;animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
