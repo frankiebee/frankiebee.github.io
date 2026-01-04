@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fence Bid Calculator FOR KYLE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1a1a1a;
+        --muted: #4d4d4d;
+        --fog: #f3f0ea;
+        --card: #fff8f0;
+        --accent: #ff5c2c;
+        --accent-ink: #3b140c;
+        --ring: rgba(255, 92, 44, 0.35);
+        --shadow: 0 22px 50px rgba(31, 20, 10, 0.15);
+        --radius: 18px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+        color: var(--ink);
+        background: radial-gradient(circle at top, #ffefd6 0%, #f7dcc8 35%, #f1c5a8 70%, #e6b19a 100%);
+        padding: 24px 16px 56px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .page {
+        width: min(1100px, 100%);
+        display: grid;
+        gap: 20px;
+      }
+
+      header {
+        display: grid;
+        gap: 12px;
+        padding: 20px 16px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 248, 240, 0.6));
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow: var(--shadow);
+      }
+
+      header h1 {
+        font-size: clamp(1.9rem, 4vw, 2.8rem);
+        letter-spacing: -0.02em;
+        margin: 0;
+      }
+
+      header p {
+        margin: 0;
+        color: var(--muted);
+        font-family: "Source Serif 4", serif;
+        font-size: clamp(1rem, 2.6vw, 1.2rem);
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 20px 18px;
+        border: 1px solid rgba(60, 25, 10, 0.08);
+        box-shadow: var(--shadow);
+      }
+
+      .card h2 {
+        margin: 0 0 12px;
+        font-size: 1.2rem;
+      }
+
+      .field {
+        display: grid;
+        gap: 6px;
+        margin-bottom: 14px;
+      }
+
+      label {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 1px solid rgba(26, 26, 26, 0.15);
+        background: #fff;
+        font-size: 1rem;
+        font-family: inherit;
+      }
+
+      input:focus,
+      select:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px var(--ring);
+        border-color: var(--accent);
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 8px;
+      }
+
+      button {
+        border: none;
+        border-radius: 999px;
+        padding: 12px 18px;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 1rem;
+        font-family: inherit;
+      }
+
+      .primary {
+        background: var(--accent);
+        color: #fff;
+        box-shadow: 0 10px 20px rgba(255, 92, 44, 0.3);
+      }
+
+      .ghost {
+        background: transparent;
+        color: var(--accent-ink);
+        border: 1px dashed rgba(60, 25, 10, 0.25);
+      }
+
+      .results {
+        display: grid;
+        gap: 12px;
+      }
+
+      .result-card {
+        background: #fff;
+        border-radius: 14px;
+        padding: 14px 16px;
+        border: 1px solid rgba(26, 26, 26, 0.08);
+      }
+
+      .result-card h3 {
+        margin: 0 0 6px;
+        font-size: 1rem;
+        color: var(--muted);
+      }
+
+      .result-value {
+        font-size: clamp(1.3rem, 3vw, 1.8rem);
+        font-weight: 700;
+      }
+
+      .summary {
+        font-family: "Source Serif 4", serif;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 16px;
+        border-radius: 14px;
+        border: 1px solid rgba(26, 26, 26, 0.08);
+        line-height: 1.6;
+      }
+
+      .summary strong {
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .stamp {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(255, 92, 44, 0.15);
+        font-size: 0.85rem;
+      }
+
+      @media (min-width: 900px) {
+        body {
+          padding: 40px 32px 72px;
+        }
+
+        .page {
+          grid-template-columns: 1.1fr 0.9fr;
+          align-items: start;
+        }
+
+        header,
+        .card {
+          padding: 24px;
+        }
+
+        header {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @keyframes floatIn {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate {
+        animation: floatIn 0.6s ease forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="animate">
+        <div class="stamp">Bid script, now with sliders.</div>
+        <h1>Fence Bid Calculator FOR KYLE</h1>
+        <p>Adjust the variables, keep the defaults, and share the total with confidence.</p>
+      </header>
+
+      <section class="card animate" style="animation-delay: 0.1s;">
+        <h2>Project Inputs</h2>
+        <form id="bid-form">
+          <div class="field">
+            <label for="size">Perimeter size (feet)</label>
+            <input id="size" name="size" type="number" min="0" step="1" required />
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="rollType">Roll type</label>
+              <input id="rollType" name="rollType" type="text" />
+            </div>
+            <div class="field">
+              <label for="rollLength">Roll length (feet)</label>
+              <input id="rollLength" name="rollLength" type="number" min="1" step="1" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="rollCost">Cost per roll ($)</label>
+              <input id="rollCost" name="rollCost" type="number" min="0" step="1" required />
+            </div>
+            <div class="field">
+              <label for="postType">Post type</label>
+              <input id="postType" name="postType" type="text" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="postSpacing">Post spacing (feet)</label>
+              <input id="postSpacing" name="postSpacing" type="number" min="1" step="1" required />
+            </div>
+            <div class="field">
+              <label for="postCost">Cost per post ($)</label>
+              <input id="postCost" name="postCost" type="number" min="0" step="1" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="days">Days on job</label>
+              <input id="days" name="days" type="number" min="1" step="1" required />
+            </div>
+            <div class="field">
+              <label for="persons">People per day</label>
+              <input id="persons" name="persons" type="number" min="1" step="1" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="dailyCost">Daily cost per person ($)</label>
+              <input id="dailyCost" name="dailyCost" type="number" min="0" step="1" required />
+            </div>
+            <div class="field">
+              <label for="buffer">Buffer ($)</label>
+              <input id="buffer" name="buffer" type="number" min="0" step="1" required />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="primary" type="submit">Update totals</button>
+            <button class="ghost" type="button" id="reset">Reset defaults</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card animate" style="animation-delay: 0.2s;">
+        <h2>Totals</h2>
+        <div class="results">
+          <div class="result-card">
+            <h3>Materials</h3>
+            <div class="result-value" id="materialsTotal">$0</div>
+          </div>
+          <div class="result-card">
+            <h3>Labor</h3>
+            <div class="result-value" id="laborTotal">$0</div>
+          </div>
+          <div class="result-card">
+            <h3>Total Bid</h3>
+            <div class="result-value" id="grandTotal">$0</div>
+          </div>
+          <div class="result-card">
+            <h3>Total + Buffer</h3>
+            <div class="result-value" id="bufferTotal">$0</div>
+          </div>
+        </div>
+
+        <div class="summary" id="summary"></div>
+      </section>
+    </div>
+
+    <script>
+      const defaults = {
+        size: 800,
+        rollType: "hogwire",
+        rollLength: 330,
+        rollCost: 400,
+        postType: "wood",
+        postSpacing: 10,
+        postCost: 35,
+        days: 10,
+        persons: 2,
+        dailyCost: 250,
+        buffer: 1000,
+      };
+
+      const fields = Object.keys(defaults);
+      const form = document.getElementById("bid-form");
+      const summary = document.getElementById("summary");
+      const materialsTotal = document.getElementById("materialsTotal");
+      const laborTotal = document.getElementById("laborTotal");
+      const grandTotal = document.getElementById("grandTotal");
+      const bufferTotal = document.getElementById("bufferTotal");
+      const resetButton = document.getElementById("reset");
+
+      const formatMoney = (value) =>
+        value.toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
+          maximumFractionDigits: 0,
+        });
+
+      const readInputs = () => {
+        const values = {};
+        fields.forEach((key) => {
+          const input = document.getElementById(key);
+          if (!input) return;
+          if (input.type === "number") {
+            values[key] = Number(input.value);
+          } else {
+            values[key] = input.value.trim();
+          }
+        });
+        return values;
+      };
+
+      const calculate = (values) => {
+        const rollCount = Math.ceil(values.size / values.rollLength);
+        const postCount = Math.ceil(values.size / values.postSpacing);
+        const rollTotal = rollCount * values.rollCost;
+        const postTotal = postCount * values.postCost;
+        const laborTotal = values.persons * values.dailyCost * values.days;
+        const materials = rollTotal + postTotal;
+        const total = materials + laborTotal;
+        const totalWithBuffer = total + values.buffer;
+
+        return {
+          rollCount,
+          postCount,
+          rollTotal,
+          postTotal,
+          laborTotal,
+          materials,
+          total,
+          totalWithBuffer,
+        };
+      };
+
+      const render = () => {
+        const values = readInputs();
+        const totals = calculate(values);
+
+        materialsTotal.textContent = formatMoney(totals.materials);
+        laborTotal.textContent = formatMoney(totals.laborTotal);
+        grandTotal.textContent = formatMoney(totals.total);
+        bufferTotal.textContent = formatMoney(totals.totalWithBuffer);
+
+        const personLabel = values.persons === 1 ? "person" : "people";
+
+        summary.innerHTML = `
+          <strong>Job size:</strong> ${values.size}' perimeter, ${values.days} days<br />
+          <strong>Rolls:</strong> ${totals.rollCount} ${values.rollType} @ ${formatMoney(values.rollCost)} = ${formatMoney(totals.rollTotal)}<br />
+          <strong>Posts:</strong> ${totals.postCount} ${values.postType} @ ${formatMoney(values.postCost)} = ${formatMoney(totals.postTotal)}<br />
+          <strong>Labor:</strong> ${values.persons} ${personLabel} @ ${formatMoney(values.dailyCost)} per day = ${formatMoney(totals.laborTotal)}
+        `;
+      };
+
+      const setDefaults = () => {
+        fields.forEach((key) => {
+          const input = document.getElementById(key);
+          if (!input) return;
+          input.value = defaults[key];
+        });
+        render();
+      };
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        render();
+      });
+
+      form.addEventListener("input", () => {
+        render();
+      });
+
+      resetButton.addEventListener("click", () => {
+        setDefaults();
+      });
+
+      setDefaults();
+    </script>
+  </body>
+</html>
